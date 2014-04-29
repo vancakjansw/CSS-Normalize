@@ -30,7 +30,7 @@ strong, samp, var, a, bdo, br, img, map, object, q, span, sub, sup {
   padding: 0;
   margin: 0;
   outline: 0;
-  border: 0; //kill focus stuffs
+  border: 0;
 }
 
  /*
@@ -65,7 +65,7 @@ button, input, optgroup, select, textarea {
  /*
   *  style reset of list elements
   */
-ul, ol {
+ul, ol, dir, menu, dl {
   list-style: none;
 }
 
