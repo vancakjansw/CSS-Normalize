@@ -1,78 +1,97 @@
 /*
- * CSS Normalize 0.8.1 v28
+ * CSS Normalize 1.0 v31 | https://github.com/vancakjansw/CSS-Normalize
+ * Licensed under the MIT license.
+ * CSS Normalize aim to normalize CSS of HTML tag across the browsers.
+ * More interesting stuffs on http://blog.webstandard.cz/
+ *
  */
 
 /*
- *  block elements homogenization
+ *  1. Prevent iOS and WP browser from adjusting font size
+ *  2. Font smoothing
  */
-canvas, dd, div, dl, fieldset, figcaption, figure, footer, form,
-h1, h2, h3, h4, h5, h6, address, article, aside, audio, blockquote, body,
-header, hgroup, hr, ol, output, p, pre, section, table, tfoot, tbody, thead, 
-ul, video, html, legend, time, embed, menu, output, applet, iframe {
+html {
+  -webkit-text-size-adjust: 100%; /* 1 */
+  -ms-text-size-adjust: 100%; /* 1 */
+  -webkit-font-smoothing: antialiased; /* 2 */
+  line-height: 1.4;
+  font-family: sans-serif;
+}
+
+/*
+ *  Block elements normalization
+ */
+html, body, canvas, dd, div, dl, fieldset, figcaption, figure, footer, form,
+h1, h2, h3, h4, h5, h6, address, article, aside, audio, blockquote, header,
+hgroup, hr, ol, output, p, pre, section, table, tfoot, tbody, thead, ul,
+video, legend, time, embed, menu, output, applet, iframe {
   padding: 0;
   margin: 0;
 }
 
 /*
- *  force html5 tags to be a block elements in IE 8/9
+ *  In-line elements normalization
  */
-article, aside, details, figcaption, figure, footer, header, hgroup, 
-main, nav, section, summary {
-  display: block;
-}
-
-/*
- *  in-line elements homogenization
- */
-b, big, i, small, tt, abbr, acronym, cite, code, dfn, em, kbd,
-button, input, label, select, textarea, optgroup, small, strike, mark,
-strong, samp, var, a, bdo, br, img, map, object, q, span, sub, sup {
+b, big, i, small, tt, abbr, acronym, cite, code, dfn, em, kbd, button, input,
+label, select, textarea, optgroup, small, strike, mark, strong, samp, var, a,
+bdo, br, img, map, object, q, span, sub, sup {
   padding: 0;
   margin: 0;
   outline: 0;
   border: 0;
 }
 
- /*
-  *  table homogenization
-  */
+/*
+ *  Table homogenization
+ */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
 th, td {
   padding: 0;
 }
 
 /*
- *  force htmk5 tags to be a in-line block elements in IE 8/9
- */
-audio, canvas, progress, video {
-  display: inline-block;
-}
-
-/*
- *  remove image border when its placed in anchor in IE
- */
-img {
-  border: 0;
-}
-
-/*
- *  form elements homogenization
+ *  Form elements homogenization
  */
 button, input, optgroup, select, textarea {
   color: inherit;
   font: inherit;
 }
 
- /*
-  *  style reset of list elements
-  */
+textarea {
+  display: block;
+}
+
+/*
+ *  Inner input tag vertical centering
+ */
+input {
+  line-height: normal;
+}
+
+/*
+ *  Style reset of list tags
+ */
 ul, ol, dir, menu, dl {
   list-style: none;
 }
 
- /*
-  *  body element normalization
-  */
- body {
-  line-height: 1.4;
-  -webkit-font-smoothing: antialiased;
- }
+/*
+ *  Set HTML5 tags to a block elements in IE 8/9
+ *  Set HTML5 'details' and 'summary' tags to a block elements in IE 10/11 and firefox
+ *  Set HTML5 'main' tag to a block elements in IE 11
+ */
+article, aside, figcaption, figure, footer, header, hgroup, nav, section,
+details, summary, main {
+  display: block;
+}
+
+/*
+ *  Force HTML 5 tags to be a in-line block elements in IE 8/9
+ */
+audio, canvas, progress, video, svg {
+  display: inline-block;
+}
